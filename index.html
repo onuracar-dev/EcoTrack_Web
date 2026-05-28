@@ -76,5 +76,44 @@
             </div>
         </div>
       </section>
+
+
+
+         <!-- Ne Kurtardım -->
+          <section id="neKurtardim" class="videoKismi">
+            <video autoplay muted loop class="bgVideo" id="savingsVideo">
+                <source src="/videos/savings.mp4" type="video/mp4">
+            </video>
+            <div class="videoOverlay"></div>
+            <div class="neKurtardimContainer ayrikDuzen leftContent">
+                <div class="interaktifPanel">
+                    <span class="sectionTag">Ne Kurtardım</span>
+                    <h2>Ekolojik Tasarruf</h2>
+
+                    <div class="girdiTablosu">
+                        <div class="girdiler">
+                            <label>Plastik (kg)</label>
+                            <input type="number" id="plastikInput" value="0" min="0" oninput="hesaplaTasarruf()">
+
+                        </div>
+                        <div class="girdiler">
+                            <label>Kağıt (kg)</label>
+                            <input type="number" id="kagıtInput" value="0" min="0" oninput="hesaplaTasarruf()">
+                            
+                        </div>
+                        <div class="girdiler">
+                            <label>Cam (kg)</label>
+                            <input type="number" id="camInput" value="0" min="0" oninput="hesaplaTasarruf()">
+                            
+                        </div>
+                        <div class="girdiler">
+                            <label>Metal (kg)</label>
+                            <input type="number" id="metalInput" value="0" min="0" oninput="hesaplaTasarruf()">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </section>
   </body>
 </html>

@@ -211,3 +211,23 @@ function navigateTo(hash) {
     isAboutTransitioning = false;
   }
 }
+
+// Menü Dinleyicileri
+const links = document.querySelectorAll(".nav-links a");
+for (let i = 0; i < links.length; i++) {
+  links[i].addEventListener("click", function(e) {
+    e.preventDefault();
+    const hash = this.getAttribute("href");
+    window.location.hash = hash;
+    navigateTo(hash);
+  });
+}
+
+window.addEventListener("hashchange", function() {
+  navigateTo(window.location.hash);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  hesaplaTasarruf();
+  navigateTo(window.location.hash);
+});

@@ -4,8 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EcoTrack</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/home.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800;900&display=swap"
+    rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/maps.css" />
+    <link rel="stylesheet" href="css/savings.css" />
+    <link rel="stylesheet" href="css/bank.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/settings.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
   </head>
   <body>
     <nav class="navbar">
@@ -27,7 +43,7 @@
     <!-- Ana Sayfa -->
      <header id="home" class="videoKismi">
         <video autoplay muted loop class="bgVideo" id="homeVideo">
-            <source src="/videos/home.mp4" type="video/mp4">
+            <source src="videos/home.mp4" type="video/mp4">
         </video>
         <div class="videoOverlay"></div>
         <div class="homeContainer homeContent">
@@ -42,7 +58,7 @@
      <!-- Atık Noktaları -->
       <section id="atikNoktalari" class="videoKismi">
         <video autoplay muted loop class="bgVideo" id="mapsVideo">
-            <source src="/videos/maps.mp4" type="video/mp4">
+            <source src="videos/maps.mp4" type="video/mp4">
         </video>
         <div class="videoOverlay"></div>
         <div class="atikContainer ayrikDuzen rightContent">
@@ -83,7 +99,7 @@
          <!-- Ne Kurtardım -->
           <section id="neKurtardim" class="videoKismi">
             <video autoplay muted loop class="bgVideo" id="savingsVideo">
-                <source src="/videos/savings.mp4" type="video/mp4">
+                <source src="videos/savings.mp4" type="video/mp4">
             </video>
             <div class="videoOverlay"></div>
             <div class="neKurtardimContainer ayrikDuzen leftContent">
@@ -128,7 +144,7 @@
           <!-- Atık Bankası-->
            <section id="atikBankasi" class="videoKismi">
             <video autoplay muted loop class="bgVideo" id="bankVideo">
-                <source src="/videos/bank.mp4" type="video/mp4">
+                <source src="videos/bank.mp4" type="video/mp4">
             </video>
             <div class="videoOverlay" id="bankOverlay"></div>
             <div class="atikBankasiContainer bankDuzen">
@@ -156,7 +172,7 @@
            <!-- Hakkımızda -->
             <section id="hakkimizda" class="videoKismi">
                 <video autoplay muted loop playsinline class="bgVideo" id="aboutVideo">
-                    <source src="/videos/about.mp4" type="video/mp4">
+                    <source src="videos/about.mp4" type="video/mp4">
                 </video>
                 <div class="videoOverlay"></div>
 
@@ -185,7 +201,7 @@
             <!-- Ayarlar -->
              <section id="ayarlar" class="videoKismi">
                 <video autoplay muted loop playsinline class="bgVideo" id="settingsVideo">
-                    <source src="/videos/settings.mp4" type="video/mp4">
+                    <source src="videos/settings.mp4" type="video/mp4">
                 </video>
                 <div class="videoOverlay"></div>
 
@@ -201,18 +217,18 @@
                         <div class="ayarlarListesi">
                             <div class="ayarlarItem">
                                 <label>Karanlık Mod</label>
-                                <div class="toggleButton active" onclick="toggleSetting(this)">Aktif</div>
+                                <div class="toggleBtn active" onclick="toggleSetting(this)">Aktif</div>
                             </div>
                             <div class="ayarlarItem">
                                 <label>Bildirimler</label>
-                                <div class="toggleButton" onclick="toggleSetting(this)">Pasif</div>
+                                <div class="toggleBtn" onclick="toggleSetting(this)">Pasif</div>
                             </div>
                             <div class="ayarlarItem">
                                 <label>Otomatik Güncellemeler</label>
-                                <div class="toggleButton active" onclick="toggleSetting(this)">Aktif</div>
+                                <div class="toggleBtn active" onclick="toggleSetting(this)">Aktif</div>
                             </div>
                             
-                            <button class="settingsSaveButton">Ayarları Kaydet  </button>
+                            <button class="settingsSaveBtn">Ayarları Kaydet  </button>
                         </div>
                     </div> 
              </section>
@@ -224,6 +240,7 @@
                 <p>© 2026 EkoTrack Projesi • Yeşili Koru, Geleceği Kurtar.</p>
              </footer>
              
-             <script src="/js/script.js"></script>
+             <script src="js/main.js"></script>
   </body>
 </html>
+  

@@ -1,0 +1,49 @@
+.girdiTablosu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.girdiler {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.girdiler label {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.girdiler input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 14px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.girdiler input:focus {
+  outline: none;
+  border-color: var(--neon-green);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.canliTasarrufSonuclari {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 20px;
+}
+
+.highlightText {
+  color: var(--neon-green);
+  font-weight: 800;
+  font-size: 20px;
+  text-shadow: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}

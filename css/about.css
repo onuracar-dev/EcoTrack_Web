@@ -1,0 +1,47 @@
+.aboutScrollContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(80px);
+  opacity: 0;
+  width: 100%;
+  max-width: 500px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.aboutCard.active-card {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0);
+}
+
+.aboutCard.exit-card {
+  opacity: 0;
+  transform: translate(-50%, -50%) translateY(-80px);
+}
+
+.aboutCard h3 {
+  font-family: var(--font-title);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--neon-green);
+  margin-bottom: 12px;
+}
+
+.aboutCard p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 15px;
+}

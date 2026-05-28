@@ -88,3 +88,49 @@ function filtreleAtikBankasi() {
     resultsGrid.innerHTML = "";
   }
 }
+
+// Hakkımızda
+const aboutCards = document.querySelectorAll(".aboutCard");
+let currentCardIndex = 0;
+let isAboutTransitioning = false;
+
+for (let i = 0; i < aboutCards.length; i++) {
+  aboutCards[i].className = "aboutCard";
+}
+if (aboutCards.length > 0) {
+  aboutCards[0].className = "aboutCard active-card";
+}
+
+function showAboutCard(index) {
+  if (index < 0 || index >= aboutCards.length || isAboutTransitioning) return;
+  isAboutTransitioning = true;
+  
+  const outgoingCard = aboutCards[currentCardIndex];
+  const incomingCard = aboutCards[index];
+  
+  if (outgoingCard) {
+    outgoingCard.className = "aboutCard exit-card";
+  }
+  incomingCard.className = "aboutCard active-card";
+  
+  currentCardIndex = index;
+  
+  setTimeout(function() {
+    isAboutTransitioning = false;
+  }, 400);
+}
+
+const aboutSection = document.getElementById("hakkimizda");
+if (aboutSection) {
+  aboutSection.addEventListener("wheel", function(e) {
+    if (e.deltaY > 0) {
+      if (currentCardIndex < aboutCards.length - 1) {
+        showAboutCard(currentCardIndex + 1);
+      }
+    } else {
+      if (currentCardIndex > 0) {
+        showAboutCard(currentCardIndex - 1);
+      }
+    }
+  });
+}

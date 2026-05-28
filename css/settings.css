@@ -1,0 +1,64 @@
+.settingsPanel {
+  max-width: 500px;
+}
+
+.ayarlarListesi {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ayarlarItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ayarlarItem label {
+  font-size: 15px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.toggleBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  padding: 8px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggleBtn.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--neon-green);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.settingsSaveBtn {
+  background: var(--neon-green);
+  color: #000;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(58, 242, 176, 0.3);
+  transition: all 0.3s ease;
+}
+
+.settingsSaveBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(58, 242, 176, 0.5);
+}
+
+#settingsVideo {
+  left: 40%;
+}

@@ -205,3 +205,42 @@ body {
   letter-spacing: 2px;
   display: block;
 }
+
+.ecoFooter {
+  text-align: center;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  pointer-events: none;
+  background: transparent;
+  border-top: none;
+  padding: 0;
+}
+
+.ecoFooter p {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+
+  .ayrikDuzen,
+  .ayrikDuzen.rightContent {
+    grid-template-columns: 1fr !important;
+  }
+
+  .emptySpace {
+    display: none;
+  }
+
+  .heroTitle {
+    font-size: 46px;
+  }
+
+  .interactifPanel {
+    padding: 25px;
+  }
+}
+

@@ -39,3 +39,52 @@ function hesaplaTasarruf() {
   document.getElementById("suMiktari").textContent = Math.round(totalWater);
   document.getElementById("co2Miktari").textContent = totalCO2.toFixed(1);
 }
+
+// Atık Bankası
+const wasteDatabase = [
+  { name: "Pet Şişe", category: "plastik", points: "15 Puan/Adet", desc: "Plastik su/alkolsüz içecek şişeleri ve kapakları." },
+  { name: "Naylon Poşet", category: "plastik", points: "5 Puan/Adet", desc: "Yırtılmamış temiz market poşetleri." },
+  { name: "Karton Koli", category: "kağıt", points: "25 Puan/Kg", desc: "Kuru, katlanmış temiz karton kutular." },
+  { name: "Gazete & Defter", category: "kağıt", points: "20 Puan/Kg", desc: "Okunmuş gazeteler, eski okul defterleri." },
+  { name: "Cam Kavanoz", category: "cam", points: "20 Puan/Adet", desc: "Temizlenmiş boş cam kavanozlar." },
+  { name: "Maden Suyu Şişesi", category: "cam", points: "15 Puan/Adet", desc: "Kırılmamış yeşil/beyaz cam içecek şişeleri." },
+  { name: "Alüminyum Kutu", category: "metal", points: "30 Puan/Adet", desc: "Alüminyum içecek kutuları." },
+  { name: "Konserve Kutusu", category: "metal", points: "25 Puan/Adet", desc: "Temiz yıkanmış konserve ve salça tenekeleri." }
+];
+
+function filtreleAtikBankasi() {
+  const searchInput = document.getElementById("atikAramasi").value.trim().toLowerCase();
+  const bankSection = document.getElementById("atikBankasi");
+  const resultsGrid = document.getElementById("aramaSonuclari");
+
+  if (searchInput.length > 0) {
+    bankSection.classList.add("searching");
+    let resultsHtml = '<div class="aramaSonuclarıKismi">';
+    let foundAny = false;
+
+    for (let i = 0; i < wasteDatabase.length; i++) {
+      const item = wasteDatabase[i];
+      if (item.name.toLowerCase().includes(searchInput) || item.category.toLowerCase().includes(searchInput)) {
+        foundAny = true;
+        resultsHtml += '<div class="resultCard">' +
+                         '<span class="resPoints">' + item.points + '</span>' +
+                         '<h4>' + item.name + '</h4>' +
+                         '<p>' + item.desc + '</p>' +
+                       '</div>';
+      }
+    }
+    resultsHtml += '</div>';
+
+    if (foundAny) {
+      resultsGrid.innerHTML = resultsHtml;
+    } else {
+      resultsGrid.innerHTML = '<div class="resultCard" style="grid-column: 1 / -1; text-align: center; border-color: var(--good-orange);">' +
+                                 '<h4 style="color: var(--good-orange);">Atık Türü Bulunamadı</h4>' +
+                                 '<p>Lütfen plastik, kağıt, cam veya metal aramayı deneyin.</p>' +
+                               '</div>';
+    }
+  } else {
+    bankSection.classList.remove("searching");
+    resultsGrid.innerHTML = "";
+  }
+}

@@ -162,3 +162,52 @@ if (saveBtn) {
     }, 2000);
   });
 }
+
+// SPA Sayfa Yönlendirici
+function navigateTo(hash) {
+  let targetId = "home";
+  if (hash) {
+    targetId = hash.replace("#", "");
+  }
+  
+  const sections = document.querySelectorAll(".videoKismi");
+  const navLinks = document.querySelectorAll(".nav-links a");
+  
+  let targetSection = document.getElementById(targetId);
+  if (!targetSection) {
+    targetSection = document.getElementById("home");
+  }
+  
+  for (let i = 0; i < sections.length; i++) {
+    sections[i].classList.remove("active-page");
+  }
+  targetSection.classList.add("active-page");
+  
+  if (targetSection.id === "atikNoktalari" && !window.leafletMapInstance) {
+    setTimeout(function() {
+      initLeafletMap();
+    }, 200);
+  } else if (targetSection.id === "atikNoktalari" && window.leafletMapInstance) {
+    setTimeout(function() {
+      window.leafletMapInstance.invalidateSize();
+    }, 200);
+  }
+  
+  for (let i = 0; i < navLinks.length; i++) {
+    navLinks[i].classList.remove("active");
+    if (navLinks[i].getAttribute("href") === "#" + targetSection.id) {
+      navLinks[i].classList.add("active");
+    }
+  }
+
+  if (targetSection.id === "hakkimizda") {
+    for (let i = 0; i < aboutCards.length; i++) {
+      aboutCards[i].className = "aboutCard";
+    }
+    if (aboutCards.length > 0) {
+      aboutCards[0].className = "aboutCard active-card";
+    }
+    currentCardIndex = 0;
+    isAboutTransitioning = false;
+  }
+}

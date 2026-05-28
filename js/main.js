@@ -134,3 +134,31 @@ if (aboutSection) {
     }
   });
 }
+
+// Ayarlar
+function toggleSetting(button) {
+  button.classList.toggle("active");
+  if (button.classList.contains("active")) {
+    button.textContent = "Aktif";
+  } else {
+    button.textContent = "Pasif";
+  }
+}
+
+const saveBtn = document.querySelector(".settingsSaveBtn");
+if (saveBtn) {
+  saveBtn.addEventListener("click", function() {
+    const btn = document.querySelector(".settingsSaveBtn");
+    const originalText = btn.textContent;
+    
+    btn.textContent = "Tercihler Kaydedildi! ✓";
+    btn.style.background = "#ffffff";
+    btn.style.color = "#000000";
+    
+    setTimeout(function() {
+      btn.textContent = originalText;
+      btn.style.background = "#ffffff";
+      btn.style.color = "#000000";
+    }, 2000);
+  });
+}

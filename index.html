@@ -121,5 +121,27 @@
                 <div class="emptySpace"></div>
             </div>
           </section>
+
+
+
+          <!-- Atık Bankası-->
+           <section id="atikBankasi" class="videoKismi">
+            <video autoplay muted loop class="bgVideo" id="bankVideo">
+                <source src="/videos/bank.mp4" type="video/mp4">
+            </video>
+            <div class="videoOverlay" id="bankOverlay"></div>
+            <div class="atikBankasiContainer bankDuzen">
+
+                <div class="bankTop">
+                    <span class="sectionTag">Atık Türü Arama</span>
+                    <h2>Atık Bankası Rehberi</h2>
+                    <p>Kabul Edilen Atık Türlerini Arayın Ve Yeşil Puanınızı Öğrenin</p>
+
+                    <div class="aramaCubugu">
+                        <input type="text" id="atikAramasi" placeholder="Atık türünü yazın..." oninput="filtreleAtikBankasi()">
+                    </div>
+                </div>
+                
+           </section>
   </body>
 </html>

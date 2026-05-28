@@ -178,5 +178,42 @@
                     </div>
                 </div>
             </section>
+
+
+
+            <!-- Ayarlar -->
+             <section id="ayarlar" class="videoKismi">
+                <video autoplay muted loop playsinline class="bgVideo" id="settingsVideo">
+                    <source src="/videos/settings.mp4" type="video/mp4">
+                </video>
+                <div class="videoOverlay"></div>
+
+                <div class="ayarlarContainer ayrikDuzen rightContent">
+
+                    <div class="emptySpace"></div>
+
+                    
+                    <div class="interactifPanel settingsPanel">
+                        <span class="sectionTag">Ayarlar</span>
+                        <h2>Kişiselleştirme Seçenekleri</h2>
+
+                        <div class="ayarlarListesi">
+                            <div class="ayarlarItem">
+                                <label>Karanlık Mod</label>
+                                <div class="toggleButton active" onclick="toggleSetting(this)">Aktif</div>
+                            </div>
+                            <div class="ayarlarItem">
+                                <label>Bildirimler</label>
+                                <div class="toggleButton" onclick="toggleSetting(this)">Pasif</div>
+                            </div>
+                            <div class="ayarlarItem">
+                                <label>Otomatik Güncellemeler</label>
+                                <div class="toggleButton active" onclick="toggleSetting(this)">Aktif</div>
+                            </div>
+                            
+                            <button class="settingsSaveButton">Ayarları Kaydet  </button>
+                        </div>
+                    </div> 
+             </section>
   </body>
 </html>
